@@ -1,0 +1,31 @@
+<div>
+    <h3 class="own-row">Millä koiralla haluat osallistua näyttelyyn??</h3>
+</div>
+<div class="ngdialog-buttons">
+    <button type="button" class="ngdialog-button ngdialog-button-secondary" ng-click="confirm(null)">Peru</button>
+</div>
+
+<div class="own-row">
+    <div class="happening own-row">
+        <h3 class="no-top-margin">{{::onlineHappening.name}}</h3>
+        <div>{{::onlineHappening.printDate()}}</div>
+    </div>
+    <br>
+
+    <div class="own-row">
+        <div ng-repeat="dog in ::dogs" class="dog">
+            <div>
+            <span ng-if="::!dog.isDead()">
+            <button ng-if="::dog.attributes.number.getAgeInMonths() >= onlineHappening.getMinimumAgeInMonths()"
+                    type="button" class="rop-button" ng-click="confirm(dog)">Ilmoittaudu
+            </button>
+            <button ng-if="::dog.attributes.number.getAgeInMonths() < onlineHappening.getMinimumAgeInMonths()"
+                    type="button" class="rop-button rop-button-disabled"
+                    title="Tapahtuman ikäraja on {{onlineHappening.getMinimumAgeInMonths()}} kk">Liian nuori
+            </button>
+                </span>
+            </div>
+            <div ng-include="'dog_app/dog/dog_profile/dog_profile_abstract.html'"></div>
+        </div>
+    </div>
+</div>

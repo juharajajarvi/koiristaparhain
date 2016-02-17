@@ -1,0 +1,19 @@
+<div ng-if="dog.attributes.fixed.isFemale()">
+    <h4>Raskausstressi</h4> {{dog.breed.getBirthStressText()}}
+
+    <img ng-if="dog.breed.hasBirthStress()" class="birth-stress-img" src="dog_app/dog/img/birth_stress.png">
+    <div class="birth-stress-description">
+        Raskausstressi kestää vuoden verran synnytyksestä, ja vaikuttaa heikentävästi syntyvien pentujen terveyteen.
+        <br>
+        {{dog.breed.getBirthStressDescription()}}
+    </div>
+    <br>
+</div>
+<div ng-repeat="litter in dog.breed.litters">
+    <h4>{{litter.date}} - {{litter.puppies.length}} pentua</h4>
+
+    <div ng-repeat="puppy in litter.puppies">
+        <div class="left-margin">{{puppy.attributes.fixed.getFullName()}}</div>
+    </div>
+</div>
+<div ng-if="dog.breed.litters.length == 0">Ei pentueita.</div>

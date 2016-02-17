@@ -1,0 +1,57 @@
+<h3>Raha-asiat</h3>
+
+<div>Rahaa tilillä: {{ bankAccount.printAmount() }}</div>
+
+<br/>
+<h4>Sponsori</h4>
+<div ng-if="bankAccount.hasSponsor()" class="sponsor no-sponsor-margin">
+    <div><img class="sponsor-logo" ng-src="dog_app/menu/bank_account/{{bankAccount.sponsor.img}}"></div>
+    <!--<div>{{bankAccount.sponsor.name}}</div>-->
+    <div>Rahaa per viikko {{bankAccount.sponsor.amountPerWeek}} €</div>
+    <div>Sopimus voimassa {{bankAccount.sponsor.getContractUntilDatePrint()}}</div>
+    <div ng-if="bankAccount.sponsor.isCancelled" class="dog-attribute attribute-1">Sopimus on peruttu. Sponsori ei maksa sinulle enää rahaa.</div>
+</div>
+<div ng-if="!bankAccount.hasSponsor()" class="sponsor no-sponsor-margin">Ei sponsoria</div>
+<br/>
+<br/>
+
+<h4>Ruokabudjetti</h4>
+<div class="btn-group">
+    <label class="btn btn-primary" ng-model="bankAccount.foodQuality" btn-radio="0">B-luokan nappula</label>
+    <label class="btn btn-primary" ng-model="bankAccount.foodQuality" btn-radio="1">A-luokan nappula</label>
+    <label class="btn btn-primary" ng-model="bankAccount.foodQuality" btn-radio="2">Monipuolinen ravinto</label>
+</div>
+<div>
+    <div>
+        <div ng-if="bankAccount.foodQuality == 0">
+            <div>Negatiivinen vaikutus koirien terveyteen.</div>
+            <div>Terveysvaikutus: <span
+                    class="dog-attribute attribute-1">{{bankAccount.getFoodQualityEffect()}}</span>
+            </div>
+        </div>
+
+        <div ng-if="bankAccount.foodQuality == 1">
+            <div>Ei vaikutusta terveyteen.</div>
+            <div>Terveysvaikutus: <span
+                    class="dog-attribute attribute-0">{{bankAccount.getFoodQualityEffect()}}</span>
+            </div>
+        </div>
+        <div ng-if="bankAccount.foodQuality == 2">
+            <div>Parantaa koirien terveyttä.</div>
+            <div>Terveysvaikutus: <span
+                    class="dog-attribute attribute-9">{{bankAccount.getFoodQualityEffect()}}</span>
+            </div>
+        </div>
+    </div>
+    <div>
+        Hinta viikossa: {{bankAccount.getFoodPricePerWeek()}} € per koira.
+    </div>
+</div>
+<br/>
+<br/>
+
+<h4>Tulot ja menot viikossa</h4>
+Tulot: {{bankAccount.getIncomePerWeek()}} € <br>
+Menot: {{bankAccount.getExpensesPerWeek()}} € <br>
+Yhteensä: {{bankAccount.getTotalPerWeek()}} € <br>
+<br/>

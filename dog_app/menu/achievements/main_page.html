@@ -1,0 +1,29 @@
+<h3>Tavoitteet</h3>
+
+<div class="owned-dogs-container">
+    <div ng-repeat="obj in achievements.achievements | filter:{ isHidden: false }" class="achievement-block">
+        <img class="achievement-status" ng-if="obj.isLocked == false" src="dog_app/menu/achievements/unlocked.png">
+        <img class="achievement-status" ng-if="obj.isLocked" src="dog_app/menu/achievements/locked.png">
+        <div>
+            <div class="achievement-name" ng-click="obj.toggleFullDetail()">{{::obj.name}} ({{::obj.prize}} €)</div>
+            <div ng-if="obj.fullDetail" class="achievement-description">
+                <div>{{::obj.description}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<h3>Salaiset suoritukset</h3>
+
+<div class="owned-dogs-container">
+    <div ng-repeat="obj in achievements.achievements | filter:{ isHidden: true }" class="achievement-block">
+        <img class="achievement-status" ng-if="obj.isLocked == false" src="dog_app/menu/achievements/unlocked.png">
+        <img class="achievement-status" ng-if="obj.isLocked" src="dog_app/menu/achievements/locked.png">
+        <div>
+            <div class="achievement-name">{{::obj.name}} ({{::obj.prize}} €)</div>
+            <div ng-if="obj.fullDetail && obj.isLocked === false" class="achievement-description">
+                <div>{{::obj.description}}</div>
+            </div>
+        </div>
+    </div>
+</div>

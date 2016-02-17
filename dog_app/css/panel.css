@@ -1,0 +1,77 @@
+.old-day-button {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    z-index: 100;
+}
+
+.old-week-button {
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    z-index: 100;
+}
+
+.old-month-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+.left-side-panel {
+    padding: 5px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 180px;
+}
+
+.main-view {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 190px;
+    right: 0;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.unread-news {
+    background: #b91d47;
+    /* float: right; */
+    right: 10px;
+    padding-left: 4px;
+    position: absolute;
+    padding-right: 4px;
+    display: inline-table;
+}
+
+.left-side-panel h2 {
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-family: Futura, 'Fjalla One', sans-serif;
+    font-weight: lighter;
+    text-align: center;
+    /* overflow: hidden; */
+    text-shadow: 2px 2px 2px rgb(186, 186, 186);
+    color: black;
+}
+
+.panel-button {
+    width: 100%;
+    border: 0;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.panel-button:hover {
+    color: black;
+}
+
+.panel-button:active {
+    background: #603cba;
+    border:none;
+}

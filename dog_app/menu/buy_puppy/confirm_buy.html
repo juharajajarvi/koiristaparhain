@@ -1,0 +1,15 @@
+<div class="own-row">
+    <h3>Haluatko ostaa pennun?</h3>
+</div>
+
+<div class="ngdialog-buttons">
+    <button type="button" class="ngdialog-button ngdialog-button-secondary" ng-click="closeThisDialog()">Peru
+    </button>
+    <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="confirm()">Osta
+    </button>
+</div>
+
+<div class="own-row">
+    <div ng-controller="MainCtrl" ng-init="dog=buyPuppy" class="dog"
+         ng-include="'dog_app/dog/dog_profile/dog_profile_abstract.html'"></div>
+</div>

@@ -1,0 +1,16 @@
+<br>
+<div class='center dog-profile-image'><img ng-src="{{ dog.attributes.print.getImage() }}"
+                         class="{{ dog.attributes.print.getHtmlClass() }}">
+    <div ng-include="'dog_app/dog/dog_profile/dog_profile_badges_v2.html'"></div>
+</div>
+<div class='kennel-name center'>{{dog.getMvaText()}}</div>
+<div class='kennel-name center'>{{::dog.attributes.fixed.kennel}}</div>
+<input maxlength="20" class='kennel-name center margin-bottom' ng-model="dog.attributes.fixed.officialName">
+<div></div>
+
+
+<tabset>
+    <tab ng-repeat="tab in dog.tabs" heading="{{tab.title}}" active="tab.active" disabled="tab.disabled">
+        <div ng-include="tab.include"></div>
+    </tab>
+</tabset>

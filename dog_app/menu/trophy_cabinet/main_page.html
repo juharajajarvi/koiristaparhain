@@ -1,0 +1,16 @@
+<h3>Palkintokaappi</h3>
+
+<div class="owned-dogs-container">
+    <div ng-repeat="dog in dogs" style="clear:both; padding-top:10px;">
+        <div class="kennel-name">{{dog.attributes.fixed.getFullName()}}</div>
+        <div style="margin-left:35px;">
+            <div ng-repeat="trophy in dog.placements">
+                <img ng-src="{{trophy.trophy}}" style="float:left;" class="trophy"
+                     title="{{trophy.gettitle()}}">
+            </div>
+            <div ng-if="dog.placements.length == 0">Ei sijoituksia.</div>
+        </div>
+    </div>
+    <div ng-if="dogs.length === 0">Sinulla ei ole koiria.</div>
+
+</div>

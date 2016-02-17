@@ -1,0 +1,19 @@
+<div class="dog-badge-container">
+    <!--MVA-->
+    <div ng-if="dog.isMaailmanvoittaja" class="dog-badge badge-good" title="Kansainvälinen muotovalio.">C.I.B.</div>
+	<div ng-if="dog.isPohjoismaidenvoittaja" class="dog-badge badge-good" title="Pohjoismaiden muotovalio.">POHJ MVA</div>
+    <div ng-if="dog.hasMuotovalio" class="dog-badge badge-good" title="Suomen muotovalio.">FI MVA</div>
+    <!--CEA-->
+    <div ng-if="::dog.genes.cea.isActive()" class="dog-badge badge-bad" title="Koira sairastaa CEA:ta.">CEA</div>
+    <div ng-if="::!dog.genes.cea.isActive() && dog.genes.cea.hasGene()" class="dog-badge badge-warning"
+         title="Koira kantaa CEA-geeniä.">CEA
+    </div>
+    <!--Birth Stress-->
+    <div ng-if="dog.breed.hasBirthStress()" class="dog-badge badge-bad"
+         title="Koiralla on raskauden aiheuttamaa stressiä {{dog.breed.getBirthStressText()}}."><img
+            class="badge-birth-stress" src="dog_app/dog/img/birth_stress.png"></div>
+    <!--Hips-->
+    <div ng-if="::dog.genes.hips.isA()" class="dog-badge badge-good" title="A-lonkat">A</div>
+    <div ng-if="::dog.genes.hips.isC()" class="dog-badge badge-warning" title="C-lonkat">C</div>
+    <div ng-if="::dog.genes.hips.isE()" class="dog-badge badge-bad" title="E-lonkat">E</div>
+</div>

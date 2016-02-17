@@ -1,0 +1,34 @@
+<div class='center'><img ng-src="{{ dog.attributes.print.getImage() }}" class="{{ dog.attributes.print.getHtmlClass() }}"></div>
+<div class='kennel-name center'>{{::dog.attributes.fixed.kennel}}</div>
+<div class='kennel-name center margin-bottom'>{{::dog.attributes.fixed.officialName}}</div>
+<div></div>
+
+<table class="dog-profile-table">
+    <tr>
+        <td>Ikä</td>
+        <td>{{ dog.attributes.print.getAge() }}</td>
+    </tr>
+    <tr>
+        <td>Säkä</td>
+        <td>{{ dog.attributes.print.getHeight() }} <span class="dog-attribute attribute-{{ dog.attributes.ratings.getHeightGrade() }}">{{dog.attributes.ratings.getHeightGrade()}}</span>
+        </td>
+    </tr>
+    <tr>
+        <td>Sukupuoli</td>
+        <td>{{::dog.attributes.fixed.sex}}</td>
+    </tr>
+    <tr>
+        <td>Väri</td>
+        <td>{{::dog.attributes.fixed.color }}</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Arvosana</td>
+        <td  class="center"><span class="dog-attribute">{{dog.attributes.ratings.getRating()}}</span>
+        </td>
+    </tr>
+
+</table>

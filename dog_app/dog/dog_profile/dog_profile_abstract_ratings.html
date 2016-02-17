@@ -1,0 +1,29 @@
+<table class="dog-profile-table" style="white-space:normal;width:175px;">
+    <tr>
+        <td>Yleis- arvosana</td>
+        <td class="center"><span class="dog-attribute"><div class="star_rating"
+                                                            ng-bind-html="dog.attributes.ratings.getRatingStar()">
+        </div></span>
+        </td>
+    </tr>
+    <tr><td>&nbsp;</td></tr>
+    <tr>
+        <td>Mätsärit</td>
+        <td class="center"><span class="dog-attribute"><div class="star_rating"
+                                                            ng-bind-html="dog.attributes.ratings.getMatchShowRatingStar()">
+        </div></span>
+        </td>
+    </tr>
+    <tr><td>&nbsp;</td></tr>
+    <tr>
+        <td>Jalostus</td>
+        <td class="center"><span class="dog-attribute"><div class="star_rating"
+                                                            ng-bind-html="dog.attributes.ratings.getBreedRatingStar()">
+        </div></span>
+        </td>
+    </tr>
+    <tr style="height:10px;">
+        <td></td>
+        <td></td>
+    </tr>
+</table>

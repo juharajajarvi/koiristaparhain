@@ -1,0 +1,266 @@
+body, html, div {
+    font-family: Futura, 'Open Sans', 'Trebuchet MS', Arial, sans-serif;
+    font-size: 15px;
+}
+
+div.ngdialog.ngdialog-theme-default .ngdialog-content {
+}
+
+div.ngdialog .ngdialog-button:hover {
+    color: black !important;
+}
+
+div.ngdialog .ngdialog-button.ngdialog-button-secondary:active {
+  background: gray;
+  color: black;
+}
+
+div.ngdialog .ngdialog-button.ngdialog-button-primary:active {
+  background: #98D6FF;
+  color: #fff;
+}
+
+.form-error {
+    color: #ee1111;
+}
+
+.form-field {
+    width:200px;
+    font-weight: bold;
+    line-height: 1.1em;
+}
+
+.news {
+    background: #eff4ff;
+    padding: 5px;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.news td {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.star_rating {
+    /* background: white; */
+    border-radius: 9px;
+    padding: 3px;
+    display: inline-block;
+    width: 91px;
+    /* border: 1px solid black; */
+}
+
+.star-height {
+    height: 25px;
+}
+
+.star_rating img {
+    height: 17px;
+    float: left;
+}
+
+ul.nav-hidden-tab-heading {
+    display: none;
+}
+
+body {
+    margin: 0;
+}
+
+.email {
+    color: blue;
+}
+
+.float-right {
+    float: right;
+}
+
+.star_container {
+    text-align: center;
+}
+
+
+.ui-block {
+    margin-bottom:10px;
+}
+
+.link {
+    cursor: pointer;
+}
+
+.top-logo {
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+}
+
+button {
+        -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.rop-button {
+    border: 0;
+    border-radius: 3px;
+    font-size: 13px;
+    padding: 6px 14px;
+    text-transform: uppercase;
+    margin-top: 2px;
+    color: white;
+}
+
+.current-date {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.bank-account {
+    cursor: pointer;
+        font-weight:bold;
+}
+
+.bank-account:hover {
+    text-decoration: underline;
+    color: #9f00a7;
+}
+
+.bank-account:active {
+    color: #ff0097;
+}
+
+.ngdialog-buttons {
+    position: fixed;
+    right: 30px;
+    top: 15px;
+}
+
+div.ngdialog h3 {
+    margin-top: 55px;    
+}
+
+div.ngdialog div.happening h3 {
+    margin-top: 5px;
+}
+
+div h3 {
+    font-size: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-family: Futura, 'Fjalla One', sans-serif;
+    font-weight: lighter;
+    color: black;
+}
+
+div h2 {
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-family: Futura, 'Fjalla One', sans-serif;
+    font-weight: lighter;
+    color: #2b5797;
+}
+
+.dog {
+    display: inline-block;
+    float: left;
+    z-index: 20;
+}
+
+.puppy {
+    width: 90px;
+    margin-top: 23px;
+}
+
+.semiadult {
+    width: 70px;
+    margin-top: 33px;
+}
+
+.adult {
+    width: 180px;
+}
+
+.muotovalio-container {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+}
+
+.muotovalio {
+    width: 250px;
+    /* right: 50px; */
+}
+
+div.ngdialog.ngdialog-theme-default {
+}
+
+div.ngdialog.ngdialog-theme-default .ngdialog-content {
+    width: 100%;
+    height: 100%;
+}
+
+.edit-button {
+    float: right;
+}
+
+.heart {
+    width: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+    float: left;
+    vertical-align: middle;
+    margin-top: 165px;
+}
+
+.dog-pair {
+    width: 557px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.margin-bottom {
+    margin-bottom: 10px;
+}
+
+.center {
+    text-align: center;
+}
+
+.achievement-unlocked {
+    -webkit-animation: flash linear 1s;
+    animation: flash linear 1s;
+}
+
+@-webkit-keyframes flash {
+    0% {
+        color: black;
+    }
+    50% {
+        color: #ff0097;
+    }
+    100% {
+        color: black;
+    }
+}
+
+@keyframes flash {
+    0% {
+        color: black;
+    }
+    50% {
+        color: #ff0097;
+    }
+    100% {
+        color: black;
+    }
+}

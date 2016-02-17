@@ -1,0 +1,11 @@
+<h3>Osta pentu</h3>
+
+<div class="owned-dogs-container">
+    <div ng-repeat="dog in ::puppiesForSale">
+        <div class="dog">
+            <button ng-if="::bankAccount.sum >= dog.getBuyPrice()" type="button" class="rop-button ngdialog-button ngdialog-button-primary" ng-click="buyPuppyConfirm(dog)">Osta ({{ dog.getBuyPrice() }} €)</button>
+            <button ng-if="::bankAccount.sum < dog.getBuyPrice()" type="button" class="rop-button rop-button-disabled ngdialog-button ngdialog-button-secondary" ng-click="">Ei rahaa ({{ dog.getBuyPrice() }} €)</button>
+            <div ng-include="'dog_app/dog/dog_profile/dog_profile_abstract.html'"></div>
+        </div>
+    </div>
+</div>

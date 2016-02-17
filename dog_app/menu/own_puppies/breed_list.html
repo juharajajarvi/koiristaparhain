@@ -1,0 +1,50 @@
+<h3 class="own-row">Pentujen tekeminen</h3>
+
+<div class="ngdialog-buttons">
+    <button type="button" class="ngdialog-button ngdialog-button-secondary" ng-click="closeThisDialog()">Peruuta
+    </button>
+</div>
+
+<h4 class="own-row">Aiot astuttaa tämän koiran</h4>
+<div class="own-row">
+    <div ng-init="dog=dogToBreed" class="dog">
+        <div ng-include="'dog_app/dog/dog_profile/dog_profile_abstract.html'"></div>
+    </div>
+</div>
+
+<br><br>
+<h4 class="own-row">Valitse pari</h4>
+
+<div class="own-row">
+    <div ng-repeat="dog in breedDogs" class="dog">
+
+        <button type="button" ng-if="bankAccount.sum >= dog.getBreedPrice()" class="rop-button" ng-click="confirm(dog)">
+            Valitse ({{ ::dog.getBreedPrice() }} €)
+        </button>
+        <button type="button" ng-if="bankAccount.sum < dog.getBreedPrice()" class="rop-button rop-button-disabled">Ei
+            rahaa ({{ ::dog.getBreedPrice() }} €)
+        </button>
+
+        <button type="button" ng-if="!dog.genetestPaid" class="rop-button" ng-click="dog.buyGenetest()">Testaa
+            (200 €)
+        </button>
+        <button type="button" ng-if="dog.genetestPaid" class="rop-button rop-button-disabled" ng-click="dog.buyGenetest()">Testaa
+            (200 €)
+        </button>
+
+        <div class='center dog-profile-image'><img ng-src="{{ ::dog.attributes.print.getImage() }}"
+                                                   class="{{ ::dog.attributes.print.getHtmlClass() }}">
+            <div ng-include="'dog_app/dog/dog_profile/dog_profile_badges_v2.html'"></div>
+        </div>
+        <div class='kennel-name center'>{{::dog.attributes.fixed.kennel}}</div>
+        <div class='kennel-name center margin-bottom'>{{::dog.attributes.fixed.officialName}}</div>
+        <div></div>
+
+        <tabset>
+            <!--ng-if="dog.attributes.fixed.isOwn || tab.active"-->
+            <tab ng-repeat="tab in ::[dog.tabs[0], dog.tabs[3]]" heading="{{tab.title}}" active="tab.active" disabled="tab.disabled">
+                <div ng-include="tab.include"></div>
+            </tab>
+        </tabset>
+    </div>
+</div>

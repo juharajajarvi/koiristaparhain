@@ -1,0 +1,42 @@
+<h3>Tapahtumat</h3>
+
+<div class="big-tournament-signup">
+    Pohjoismaiden voittaja -näyttely järjestetään joka vuosi 1.7.<br/>
+    Maailman voittaja -näyttely järjestetään joka vuosi 1.9.
+</div>
+
+<div ng-repeat="happening in happenings">
+    <div class="happening-container">
+        <div class="happening-calendar {{::happening.getHtmlClass()}}">
+            <h4 class="no-top-margin">{{::happening.getName()}}</h4>
+            <div>Osallistumismaksu {{::happening.getPricePrint()}}</div>
+            <div>{{::happening.place}}</div>
+            <div>{{::happening.printDate()}}</div>
+            <div ng-if="::happening.type != 'Koirakoulu'">Taso
+                <div class="star_rating" ng-bind-html="::happening.getStarImage()"></div>
+            </div>
+            <div ng-if="::happening.type == 'Koirakoulu'" class="star-height">&nbsp;</div>
+
+            <div>
+                <button ng-if="happening.isSignup" type="button" title-placement="bottom"
+                        title-popup-delay="1500"
+                        title="Simuloi päiviä eteenpäin kunnes on kyseinen päivä, ja tapahtuma alkaa."
+                        class="signup-button signedup" ng-click="happening.simulateTo()">
+                    Ilmoittauduttu
+                </button>
+                <button ng-if="!happening.isSignup && bankAccount.sum >= happening.getPrice()" type="button" title-placement="bottom"
+                        title-popup-delay="1500"
+                        title="Simuloi päiviä eteenpäin kunnes on kyseinen päivä, ja tapahtuma alkaa."
+                        class="signup-button" ng-click="happening.simulateTo()">
+                    Aloita
+                </button>
+                <button ng-if="!happening.isSignup && bankAccount.sum < happening.getPrice()" type="button" title-placement="bottom"
+                        title-popup-delay="1500"
+                        title="Simuloi päiviä eteenpäin kunnes on kyseinen päivä, ja tapahtuma alkaa."
+                        class="signup-button rop-button-disabled">
+                    Ei varaa
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

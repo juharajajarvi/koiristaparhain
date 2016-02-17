@@ -1,0 +1,68 @@
+<div>
+    <h3 class="own-row">{{::activeHappening.getName()}}</h3>
+</div>
+<div class="ngdialog-buttons">
+    <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="closeThisDialog()">OK</button>
+</div>
+<div class="happening">
+    <h3 class="no-top-margin">Sijoitus</h3>
+
+    <div>Sijoituksesi
+        <div class="happening-rank rank-{{::activeHappening.placement.rank}}">{{::activeHappening.placement.rank}}</div>
+    </div>
+    <div>Palkinto {{::activeHappening.placement.moneyReward}} €</div>
+    <div ng-if="::activeHappening.placement.changeInExperience > 0">Kokemuksen kasvu <span
+            class="dog-attribute attribute-7">+{{::activeHappening.placement.changeInExperience}}</span></div>
+    <div ng-if="::activeHappening.placement.changeInExperience == 0">Kokemuksen kasvu <span
+            class="dog-attribute attribute-1">{{::activeHappening.placement.changeInExperience}}</span></div>
+    <div>Tuuri
+        <span ng-if="::activeHappening.userDog.attributes.number.luck > 0" class="dog-attribute attribute-7">+{{::activeHappening.userDog.attributes.number.luck | number:2}}</span>
+        <span ng-if="::activeHappening.userDog.attributes.number.luck <= 0" class="dog-attribute attribute-1">{{::activeHappening.userDog.attributes.number.luck | number:2}}</span>
+    </div>
+    <br>
+
+    <div class="trophy-container">
+        <img ng-src="{{::activeHappening.placement.trophy}}">
+        <img ng-src="{{::activeHappening.placement2.trophy}}">
+    </div>
+</div>
+
+<div class="palkintopalli-container">
+    <img ng-if="::!activeHappening.isBigTournament()" src="dog_app/dog/img/palkintopalli.png"
+         style="width:350px; position:absolute;bottom:0;left:0;">
+    <img ng-if="::activeHappening.isBigTournament()" src="dog_app/dog/img/palkintopalli_big_show.png"
+         style="width:350px; position:absolute;bottom:0;left:0;">
+
+    <div style="position: absolute; left:-30px; bottom:83px;" ng-controller="MainCtrl"
+         ng-init="::dog = activeHappening.rankedDogs[1]">
+        <div class="dog only-name">
+            <div ng-include="'dog_app/dog/dog_profile/dog_profile_abstract_only_name.html'"></div>
+        </div>
+    </div>
+    <div style="position: absolute; left:84px; bottom:124px;" ng-controller="MainCtrl"
+         ng-init="::dog = activeHappening.rankedDogs[0]">
+        <div class="dog only-name">
+            <div ng-include="'dog_app/dog/dog_profile/dog_profile_abstract_only_name.html'"></div>
+        </div>
+    </div>
+    <div style="position: absolute; left:202px; bottom:53px;" ng-controller="MainCtrl"
+         ng-init="::dog = activeHappening.rankedDogs[2]">
+        <div class="dog only-name">
+            <div ng-include="'dog_app/dog/dog_profile/dog_profile_abstract_only_name.html'"></div>
+        </div>
+    </div>
+</div>
+
+<div class="happening-results">
+    <h3>Lopputulokset</h3>
+    <table class="happening-results-table">
+        <tr ng-repeat="dog in ::activeHappening.rankedDogs">
+            <td>{{::$index+1}}.</td>
+            <td class="{{::dog.attributes.print.getNameCssClass()}}">{{::dog.attributes.fixed.kennel}}
+                {{::dog.attributes.fixed.officialName}}
+            </td>
+            <td ng-if="::!activeHappening.isMatchShow()">{{::dog.attributes.ratings.getRating()}}</td>
+            <td ng-if="::activeHappening.isMatchShow()">{{::dog.attributes.ratings.getMatchShowRating()}}</td>
+        </tr>
+    </table>
+</div>

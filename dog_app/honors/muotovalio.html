@@ -1,0 +1,15 @@
+<div class="own-row">
+    <h3>{{activeHappening.userDog.attributes.fixed.getFullName()}} on nyt muotovalio!</h3>
+</div>
+
+<div class="ngdialog-buttons">
+<button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="confirm()">OK</button>
+</div>
+
+<div class="own-row">
+    <h4>Onneksi olkoon!</h4>
+</div>
+<div class="muotovalio-container">
+    <img src="dog_app/dog/img/muotovalio.png" class="muotovalio">
+    <div ng-init="dog = activeHappening.userDog" class="dog" ng-include="'dog_app/dog/dog_profile/dog_profile_abstract.html'"></div>
+</div>

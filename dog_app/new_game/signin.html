@@ -1,0 +1,34 @@
+<div class="already-registered" ng-click="user.newgame=true">Luo uusi tunnus</div>
+
+<h3 class="own-row">Kirjaudu sisään</h3>
+
+<div class="ngdialog-buttons">
+    <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="init()">OK</button>
+</div>
+
+<br/>
+<div class="form-error own-row" ng-if="user.load.status=='failed'">Käyttäjätunnus tai
+    salasana on väärin.
+</div>
+<div class="hide-this">&nbsp;</div>
+
+<div class="own-row signin-data">
+    <div>
+        <label for="signin_username" class="form-field">Käyttäjätunnus</label><br/>
+        <input id="signin_username" ng-model="user.username" type="text" focus-me="{{shouldBeOpen}}">
+    </div>
+
+    <div>&nbsp;</div>
+    <div class="hide-this">&nbsp;</div>
+
+    <div>
+        <label for="signin_password" class="form-field">Salasana</label><br/>
+        <input id="signin_password" ng-model="user.password" type="password">
+    </div>
+</div>
+
+<script>
+    (function () {
+        document.getElementById('signin_username').focus();
+    })();
+</script>

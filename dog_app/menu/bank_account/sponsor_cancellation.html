@@ -1,0 +1,16 @@
+<div class="ngdialog-buttons">
+    <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="confirm()">OK</button>
+</div>
+
+<div class="own-row">
+    <h3>Sponsori on purkanut sopimuksen</h3>
+
+    <div class="sponsor">
+        <div><img class="sponsor-logo" ng-src="dog_app/menu/bank_account/{{bankAccount.sponsor.img}}"></div>
+    </div>
+
+    <div class="cancellation-reason">
+        <h4>Olet tahrannut sponsorin mainetta ja rikkonut seuraavaa sopimusehtoa:</h4>
+        <h4>{{bankAccount.sponsor.cancellationText}}</h4>
+    </div>
+</div>

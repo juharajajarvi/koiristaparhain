@@ -1,0 +1,5 @@
+<div ng-repeat="trophy in dog.placements">
+    <img ng-src="{{trophy.trophy}}" style="float:left;" class="trophy"
+         title-placement="right" title="{{trophy.title}}">
+</div>
+<div ng-if="dog.placements.length == 0">Ei sijoituksia.</div>

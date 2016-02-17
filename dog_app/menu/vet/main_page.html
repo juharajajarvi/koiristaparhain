@@ -1,0 +1,84 @@
+<h3>Eläinlääkäri</h3>
+
+<div ng-repeat="dog in dogs">
+
+    <div ng-repeat="issue in dog.healthIssues">
+
+        <div ng-if="issue.isFound && !issue.isHidden" class="vet-issue center">
+            <button class="rop-button remove-vet-button" ng-click="issue.hide()">Poista tiedote</button>
+
+            <!--isHidden: {{issue.isHidden}}, isFound: {{issue.isFound}}, isTriggered: {{issue.isTriggered}}-->
+            <div ng-init="dog = issue.dog"
+                 ng-include="'dog_app/dog/dog_profile/dog_profile_abstract_only_name.html'" class="centered-dog"></div>
+
+            <table class="centered-table">
+
+                <tr>
+                    <td class="operation dog-attribute health-issue-title" colspan="2">{{issue.text}}</td>
+                    <!--<td class="operation">Havaittu {{issue.findDate | date:'dd.MM.yyyy'}}</td>-->
+                </tr>
+                <tr>
+                    <td class="operation">Vaikutus terveyteen:</td>
+                    <td class="operation"><span
+                            class="dog-attribute attribute-1">{{issue.originalEffect | number:2}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="operation">
+                        Hoidon onnistumistodennäköisyys:
+                    </td>
+                    <td class="operation">
+                        <span class="dog-attribute attribute-0">{{issue.cureChance*100}} %</span>
+                    </td>
+                </tr>
+            </table>
+            <div>&nbsp;</div>
+
+            <h4 class="own-row">Toimenpiteet</h4>
+
+            <div ng-if="issue.operations.length==0">Ei tehtyjä toimenpiteitä.</div>
+            <table class="centered-table">
+                <tr ng-repeat="operation in issue.operations">
+                    <td class="dog-attribute operation">
+                        <span ng-if="operation.changeInHealth <= 0" class="attribute-1">Toimenpide epäonnistui.</span>
+                    <span ng-if="!operation.isCured && operation.changeInHealth > 0"
+                          class="attribute-5">Toimenpide onnistui osittain!</span>
+                    <span ng-if="operation.isCured"
+                          class="attribute-9">Toimenpide onnistui!</span>
+                    </td>
+                    <td class="operation">
+                        Vaikutus terveyteen on nyt
+                        <span ng-if="operation.effect != 0"
+                              class="dog-attribute attribute-1">{{operation.effect | number:2}}</span>
+                    <span ng-if="operation.effect == 0"
+                          class="dog-attribute attribute-9">{{operation.effect | number:2}}</span>
+                    </td>
+                </tr>
+
+            </table>
+
+            <div>&nbsp;</div>
+
+            <span ng-if="issue.isCured" class="dog-attribute attribute-9">Vaiva on täysin hoidettu.</span>
+            <span ng-if="!issue.isCured && ($parent.dog.isDead() || $parent.dog.attributes.number.shouldDie())"
+              class="dog-attribute attribute-1">Koira on kuollut.</span>
+
+            <div>&nbsp;</div>
+
+            <div class="vet-buttons-container" ng-if="!issue.isSeen || (!($parent.dog.isDead() || $parent.dog.attributes.number.shouldDie()) && !issue.isCured)">
+                <button ng-if="!issue.isSeen" class="rop-button vet-button" ng-click="issue.acknowledge()">Myöhemmin
+                </button>
+                <button ng-if="!($parent.dog.isDead() || $parent.dog.attributes.number.shouldDie()) && !issue.isCured && $parent.bankAccount.canAfford(issue.getPrice()) "
+                        class="rop-button vet-button" ng-click="$parent.dog.pay(issue.getPrice()); issue.operate();">
+                    Hoida
+                    ({{issue.getPrice() | number}} €)
+                </button>
+                <button ng-if="!($parent.dog.isDead() || $parent.dog.attributes.number.shouldDie()) && !issue.isCured && !$parent.bankAccount.canAfford(issue.getPrice()) "
+                        class="rop-button rop-button-disabled vet-button" ng-click="">Ei varaa
+                    ({{issue.getPrice() | number}} €)
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-if="vet.healthIssuesCount()==0">Ei aukiolevia tehtäviä.</div>

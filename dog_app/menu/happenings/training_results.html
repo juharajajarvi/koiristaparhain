@@ -1,0 +1,16 @@
+<div>
+    <h3 ng-if="::activeHappening.changeInTraining > 0" class="own-row">Koulutus onnistui!</h3>
+    <h3 ng-if="::activeHappening.changeInTraining <= 0" class="own-row">Koulutus ei sujunut odotetusti...</h3>
+</div>
+
+<div class="ngdialog-buttons">
+    <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="confirm()">OK</button>
+</div>
+
+<div class="own-row">
+    <h4 ng-if="::activeHappening.changeInTraining > 0">Koulutuksen kasvu <span class="dog-attribute attribute-9">+{{::activeHappening.changeInTraining}}</span></h4>
+    <h4 ng-if="::activeHappening.changeInTraining <= 0">Koulutuksen kasvu <span class="dog-attribute attribute-1">+{{::activeHappening.changeInTraining}}</span></h4>
+    <br>
+    <div ng-init="::dog=activeHappening.userDog" class="dog"
+         ng-include="'dog_app/dog/dog_profile/dog_profile_abstract.html'"></div>
+</div>

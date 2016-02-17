@@ -1,0 +1,37 @@
+<h3>Kuolleet</h3>
+
+<div class="owned-dogs-container">
+    <div ng-repeat="dog in deadDogs" class="owned-dogs">
+        <div class="dog">
+            <button type="button"
+                    class="rop-button ngdialog-button ngdialog-button-primary" ng-click="removePermanently(dog)">
+                Poista
+            </button>
+            <div class='center'><img ng-src="{{ ::dog.attributes.print.getImage() }}"
+                                     class="{{ ::dog.attributes.print.getHtmlClass() }}"></div>
+            <div class='kennel-name center'>{{::dog.attributes.fixed.kennel}}</div>
+            <div class='kennel-name center margin-bottom'>{{::dog.attributes.fixed.officialName}}</div>
+            <div></div>
+
+            <table class="dog-profile-table">
+                <tr>
+                    <td>Ikä</td>
+                    <td>{{ ::dog.attributes.print.getAge() }}</td>
+                </tr>
+                <tr>
+                    <td>Kuollut</td>
+                    <td>{{ ::dog.attributes.fixed.timeOfDeath }}</td>
+                </tr>
+                <tr>
+                    <td>Sukupuoli</td>
+                    <td>{{::dog.attributes.fixed.sex}}</td>
+                </tr>
+                <tr>
+                    <td>Väri</td>
+                    <td>{{::dog.attributes.fixed.color }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <h4 ng-if="deadDogs.length === 0">Yksikään koirasi ei ole kuollut.</h4>
+</div>

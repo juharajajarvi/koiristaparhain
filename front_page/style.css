@@ -1,0 +1,231 @@
+body {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    font-size: 20px;
+    min-height: 2000px;
+}
+
+.logo {
+    width: 250px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+.inner-container {
+    text-align: left;
+}
+
+.hidden {
+    display: none;
+}
+
+.button-list {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.ui_element {
+    margin-top: 65px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.help-container {
+    float:none;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.contents {
+    margin-bottom: 50px;
+}
+
+.contents a {
+    display: block;
+}
+
+.help-container h2 {
+    margin-top: 5px;
+}
+
+.help-container img {
+}
+
+
+.help-text {
+    width: 455px;
+    left: 250px;
+    position: absolute;
+    background: #8e44ad;
+    padding-left: 10px;
+    border-radius: 20px;
+    padding-bottom: 15px;
+    padding-top: 10px;
+    top: 0;
+    font-family: sans-serif;
+}
+
+.emph {
+    font-weight: bold;
+}
+
+.bold {
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+div.active-button {
+    background: #9f00a7;
+}
+
+.play-button {
+    background: #ff0097;
+    color:white;
+    display: inline;
+    padding: 13px;
+    transform-style: initial;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+div.small-play-button {
+    font-size: 15px;
+    padding: 6px;
+}
+
+.play-button:hover {
+    background: #7e3878;
+}
+
+
+.front-page-button {
+    background: #ff0097;
+    color:white;
+    padding: 13px;
+    font-size: 20px;
+    cursor: pointer;
+    font-family: Futura, 'Fjalla One', arial, sans-serif;
+    width: 100px;
+    display: inline-block;
+}
+
+.front-page-button:hover {
+    color:black;
+}
+
+.front-page-button:active {
+    background:#9f00a7;
+}
+
+.front-page-ingress {
+    position: absolute;
+    left: 20px;
+    padding: 13px;
+    width: 371px;
+    top: 90px;
+    color: #ff0097;
+    font-weight: bold;
+    -ms-transform: rotate(-9deg); /* IE 9 */      
+    -webkit-transform: rotate(-9deg); /* Chrome, Safari, Opera */      
+    transform: rotate(-9deg);
+    text-shadow: 2px 2px 2px #E0DCE0;
+}
+
+.ui_element {
+    display: none;
+}
+
+.email {
+    color: #2d89ef;
+}
+
+.sheltie_repeat {
+    background: url('sheltie_repeat.png');
+    background-repeat:repeat-x;
+    width: 824px;
+    height: 125px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dev-version {
+    position: absolute;
+    right:0;
+    padding: 5px;
+    width: 190px;
+    top:0;
+}
+.margin-centered {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logo-container {
+    text-align: center;
+    position: relative;
+    margin-bottom: 65px;
+}
+
+button {
+    cursor: pointer;
+}
+
+.creator {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.package {
+    clear:both;
+    margin-bottom: 70px;
+    text-align: center;
+}
+
+div a {
+    text-decoration: none;
+    color: #ff0097;
+}
+
+div a:hover {
+    text-decoration: underline;
+}
+
+div a:active {
+    color: #9f00a7;
+}
+
+.package.margin-top {
+    margin-top: 30px;
+}
+
+.package img {
+    max-width: 100%;
+    text-align: center;
+    margin-top: 29px;
+}
+
+.text {
+    padding: 13px;
+    color: #ff0097;
+    font-size: 20px;
+    max-width: 450px;
+    text-align: left;
+    font-family: sans-serif;
+}
+
+h3 {
+    font-size: 25px;
+    font-weight: bolder;
+    font-family: Futura, 'Fjalla One', arial, sans-serif;
+}
+
+h2 {
+    font-size: 20px;
+    color: #ff0097;
+    font-weight: bold;
+}

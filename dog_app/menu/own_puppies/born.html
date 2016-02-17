@@ -1,0 +1,14 @@
+<h3 class="own-row">Onneksi olkoon!</h3>
+
+<h4 class="own-row">Syntyi {{ ::puppies.length }} pentua!</h4>
+<h4 class="own-row">Anna pennuille nimi.</h4>
+
+<div class="ngdialog-buttons">
+    <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="confirm()">OK</button>
+</div>
+
+<div class="own-row">
+    <div ng-repeat="dog in ::puppies" class="dog">
+        <div ng-include="'dog_app/dog/dog_profile/dog_profile_abstract_born.html'"></div>
+    </div>
+</div>

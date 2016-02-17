@@ -1,0 +1,33 @@
+<h3>Online Tapahtumat</h3>
+
+<div class="big-tournament-signup">
+    Pohjoismaiden voittaja -näyttely järjestetään joka viikko perjantaina.<br/>
+    Maailman voittaja -näyttely järjestetään joka viikko lauantaina.
+</div>
+
+<div ng-repeat="happening in onlineHappenings">
+    <div class="happening-container">
+        <div class="happening-calendar {{::happening.getHtmlClass()}}">
+            <h4 class="no-top-margin">{{::happening.getName()}}</h4>
+            <div>Osallistumismaksu {{::happening.price | number:2}} €</div>
+            <div>{{::happening.printDate()}}</div>
+            <div>
+                <button ng-if="happening.isSignup" type="button" title-placement="bottom"
+                        title-popup-delay="1500"
+                        class="signup-button signedup">
+                    Ilmoittauduttu
+                </button>
+                <button ng-if="!happening.isSignup && bankAccount.sum >= happening.price" type="button" title-placement="bottom"
+                        title-popup-delay="1500"
+                        class="signup-button" ng-click="chooseDogForOnline(happening)">
+                    Ilmoittaudu
+                </button>
+                <button ng-if="!happening.isSignup && bankAccount.sum < happening.price" type="button" title-placement="bottom"
+                        title-popup-delay="1500"
+                        class="signup-button rop-button-disabled">
+                    Ei varaa
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="ngdialog-buttons">
+    <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="confirm()">OK
+    </button>
+</div>
+
+<h3 class="own-row">Sakot tuli!</h3>
+
+<div class="centered-box">
+    <div class="own-row">
+        <img class="temmel" src="dog_app/img/temmel.png">
+    </div>
+    <br/>
+    <br/>
+
+    Pentueessa oli: <br>
+    <ul>
+        <li ng-if="::fines.eHipsCount > 0">E-lonkkaisia pentuja: <span class="blue-color">{{::fines.eHipsCount}}</span></li>
+        <li ng-if="::fines.ceaCount > 0">CEA:ta sairastavia pentuja: <span class="blue-color">{{::fines.ceaCount}}</span></li>
+        <li ng-if="::fines.healthBelow2Count > 0">Pentuja joilla on heikko terveys: <span class="blue-color">{{::fines.healthBelow2Count}}</span></li>
+    </ul>
+
+    <br>
+    Sait sakkoja yhteensä <span class="dog-attribute attribute-1">{{::fines.total}} €</span>.
+
+</div>

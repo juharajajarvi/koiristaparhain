@@ -1,0 +1,98 @@
+<div class="already-registered" ng-click="user.newgame=false;">Minulla on käyttäjätunnus</div>
+
+<h3 class="own-row">Kennelin perustaminen</h3>
+
+<div class="ngdialog-buttons">
+    <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="showHelpDialog()">OK</button>
+</div>
+
+<div class="centered-box">
+    <div class="hide-this">&nbsp;</div>
+
+    <h2 class="new-game-kennel-name">Kennelin nimi</h2>
+
+    <div class="info_text hide-this">Kennelin nimi on yleensä genetiivissä, esim. &quot;Mikonhuhdan kennel&quot; tai &quot;Pirkon
+        kennel&quot;.
+    </div>
+
+    <div class="hide-this">&nbsp;</div>
+    <input type="text" maxlength="15" placeholder="Pupulan" ng-model="user.kennel" focus-me="{{shouldBeOpen}}"> kennel
+    <div class="hide-this">&nbsp;</div>
+    <div class="hide-this">&nbsp;</div>
+
+    <h2 class="">Rodun valinta</h2>
+
+    <div class="breed-select">
+        <div ng-if="$parent.user.breed=='shetlandsheepdog'">
+            <img src="dog_app/dog/img/shetlandsheepdog/sable.png">
+
+            <table class="breed-info">
+                <thead>
+                <tr>
+                    <td>Ominaisuus</td>
+                    <td>Uros</td>
+                    <td>Narttu</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Optimaalinen säkä</td>
+                    <td>36 - 40 cm</td>
+                    <td>35 - 39 cm</td>
+                </tr>
+                <tr>
+                    <td>Paino</td>
+                    <td>7 - 9 kg</td>
+                    <td>6 - 8 kg</td>
+                </tr>
+                <tr>
+                    <td>Elinikä</td>
+                    <td>max 15 v</td>
+                    <td>max 15 v</td>
+                </tr>
+                </tbody>
+            </table>
+            <!--<div class="breed-info-bold">Yleisimmät sairaudet</div>
+            <div>Collie Eye Anomaly (CEA)</div>-->
+        </div>
+        <!--<div ng-if="$parent.user.breed=='chihuahua'">
+            <img src="dog_app/dog/img/chihuahua/sable.png">
+            <table class="breed-info">
+                <thead>
+                <tr>
+                    <td>Ominaisuus</td>
+                    <td>Uros</td>
+                    <td>Narttu</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Optimaalinen säkä</td>
+                    <td>19 - 21 cm</td>
+                    <td>19 - 21 cm</td>
+                </tr>
+                <tr>
+                    <td>Paino</td>
+                    <td>1,7 - 2,3 kg</td>
+                    <td>1,7 - 2,3 kg</td>
+                </tr>
+                <tr>
+                    <td>Elinikä</td>
+                    <td>max 17 v</td>
+                    <td>max 17 v</td>
+                </tr>
+                </tbody>
+            </table>
+            <!--<div class="breed-info-bold">Yleisimmät sairaudet</div>
+            <div>Sydänsairaudet</div>-->
+        <!--</div>-->
+    </div>
+    <div class="btn-group margin-top">
+        <label class="btn btn-primary" name="breed" ng-model="$parent.user.breed" btn-radio="'shetlandsheepdog'">Shetlanninlammaskoira</label>
+        <!--<label class="btn btn-primary" name="breed" ng-model="$parent.user.breed"
+               btn-radio="'chihuahua'">Chihuahua</label>-->
+    </div>
+    <div>&nbsp;</div>
+    <div>Toistaiseksi roduksi voi valita ainoastaan shetlanninlammaskoiran.</div>
+
+</div>

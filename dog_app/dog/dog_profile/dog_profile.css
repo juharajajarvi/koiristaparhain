@@ -1,0 +1,358 @@
+.dog-profile-table tr, .dog-profile-table td {
+    margin:1px;
+    padding:0;
+}
+
+.dog-profile-table {
+    text-align: left;
+}
+
+.own-row, .own-row .dog {
+    text-align: center;
+    float: none;
+}
+
+.centered-table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+}
+
+.centered-dog {
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.temmel {
+    width: 250px;
+}
+
+.centered-box {
+    max-width: 327px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.already-registered {
+    position: absolute;
+    background: #00a300;
+    color: white;
+    font-weight: bold;
+    top: 0;
+    left: 20px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 6px;
+    cursor: pointer;
+}
+
+.already-registered:hover {
+    color:black;
+}
+
+.puppies {
+    margin-top:20px;
+}
+
+.puppies div:nth-of-type(1) .dog {
+    clear:left;
+}
+
+img.birth-stress-img {
+    float: right;
+    width: 70px;
+}
+
+.birth-stress-description {
+    font-size: 10px;
+}
+
+.gene-name {
+    font-weight: bold;
+    padding-right: 0;
+    text-align: left;
+}
+
+.gene-status {
+    padding-right: 6px;
+    text-align: center;
+    width: 60px;
+}
+
+h4.dog-profile-topic {
+    text-align: left;
+    color: #2d89ef;
+    margin-bottom: 0px;
+    margin-top: 20px;
+}
+
+.gene-pool {
+    text-shadow: 1px 1px 0 black;
+    font-weight: bold;
+}
+
+.gene-pool-lacking-true {
+    color: #c0392b;
+}
+
+.gene-pool-lacking-almost {
+    color: #f39c12;
+}
+
+.gene-pool-lacking-false {
+    color: #2ecc71;
+}
+
+.gene-pool-allele {
+    float: left;
+}
+
+.allele {
+    width: 13px;
+    height: 45px;
+    float: left;
+    margin: 4px;
+    border-radius: 9px;
+    background: linear-gradient(180deg, #bdc3c7, #7f8c8d);
+    position: relative;
+    border: 1px solid #2c3e50;
+}
+
+.allele .allele-stripe {
+    height: 12px;
+    top: 22px;
+    position: absolute;
+    width: 11px;
+    border: 1px solid #2c3e50;
+    border-left: 0;
+    border-right: 0;
+    font-size: 11px;
+    line-height: 9px;
+    color: white;
+    text-shadow: 1px 1px black;
+}
+
+.allele-alpha {
+    background: #e67e22;
+}
+
+.allele-beta {
+    background: #2cc26b;
+}
+
+.allele-gamma {
+    background: #e74c3c;
+}
+
+.allele-delta {
+    background: #2c3e50;
+}
+
+.allele-epsilon {
+    background: #f1c40f;
+}
+
+.allele .allele-true {
+    background: #8e44ad;
+}
+
+.allele .allele-trait-true {
+    background: #2d89ef;
+}
+
+.allele .allele-false {
+    background: #ecf0f1;
+}
+
+.allele .allele-trait-false {
+    background: #ecf0f1;
+}
+
+@-webkit-keyframes shinyglow {
+    from { background-color: #f1c40f; -webkit-box-shadow: 0 0 18px #f39c12; }
+    50% { background-color: #e67e22; -webkit-box-shadow: 0 0 18px #d35400; }
+    to { background-color: #f1c40f; -webkit-box-shadow: 0 0 18px #f39c12; }
+}
+
+@keyframes shinyglow {
+    from { background-color: #f1c40f; -webkit-box-shadow: 0 0 18px #f39c12; }
+    50% { background-color: #e67e22; -webkit-box-shadow: 0 0 18px #d35400; }
+    to { background-color: #f1c40f; -webkit-box-shadow: 0 0 18px #f39c12; }
+}
+
+.allele .allele-trait-shiny {
+    background: #2d89ef;
+    -webkit-animation: shinyglow 1s infinite; /* Chrome, Safari, Opera */
+    animation: shinyglow 1s infinite;
+    animation-duration: 1s;
+}
+
+div.puppy-parent {
+    margin-bottom: 25px;
+}
+
+.dog {
+    border: 1px solid black;
+    display: inline-block;
+    padding: 3px;
+    margin: 4px;
+    width: 220px;
+    vertical-align: top;
+    /* float: left; */
+    background: #ffffff; /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover, #ffffff 0%, #e5e5e5 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #ffffff), color-stop(100%, #e5e5e5)); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover, #ffffff 0%, #e5e5e5 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover, #ffffff 0%, #e5e5e5 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover, #ffffff 0%, #e5e5e5 100%); /* IE10+ */
+    background: radial-gradient(ellipse at center, #ffffff 0%, #e5e5e5 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e5e5e5', GradientType=1); /* IE6-9 fallback on horizontal gradient */
+    text-align: center;
+    min-height: 577px;
+}
+
+.dog-profile-image {
+    position: relative;
+    height: 155px;
+}
+
+.dog-badge-container {
+    position: absolute;
+    bottom: 0;
+    right: 8px;
+}
+
+.badge-birth-stress {
+    height: 23px;
+}
+
+.dog-badge {
+    width: 42px;
+    border-radius: 5px;
+    padding: 3px;
+    right: 0;
+    color: white;
+    margin: 4px;
+    cursor: default;
+    box-shadow: 2px 2px 2px #34495e;
+}
+
+.badge-cea-carry {
+    background: #7f8c8d;
+}
+
+.badge-good {
+    background: #00a300;
+}
+
+.badge-warning {
+    background: #e3a21a;
+}
+
+.badge-bad {
+    background: #b91d47;
+}
+
+.kennel-name {
+    font-size: 15px;
+    font-weight: bolder;
+    text-shadow: 1px 1px rgb(202, 202, 202);
+    overflow: hidden;
+    white-space: nowrap;
+    color: black;
+}
+
+input.kennel-name {
+    color: #da532c;
+}
+
+
+.only-name.dog {
+    width: 154px;
+    background: none;
+    min-height: 0;
+    border: none;
+}
+
+.own-dog {
+    font-weight: bold;
+    color: blue;
+}
+
+.only-name img {
+    width: 100px;
+}
+
+.only-name .kennel-name:last-of-type {
+    margin-bottom:0;
+}
+
+.only-name .kennel-name {
+    font-size: 16px;
+    overflow: visible;
+}
+
+.food-effect {
+    position: absolute;
+    margin-left: 4px;
+}
+
+.dog-attribute {
+    font-weight: bold;
+    text-shadow: 1px 1px rgb(90, 90, 90);
+}
+
+.attribute-1 {
+    color: red;
+}
+
+.attribute-2 {
+    color: red;
+}
+
+.attribute-3 {
+    color: orangered;
+}
+
+.attribute-4 {
+    color: yellow;
+}
+
+.attribute-5 {
+    color: orange;
+}
+
+.attribute-6 {
+    color: orange;
+}
+
+.attribute-7 {
+    color: green;
+}
+
+.attribute-8 {
+    color: green;
+}
+
+.attribute-9 {
+    color: limegreen;
+}
+
+.attribute-10 {
+    color: limegreen;
+}
+
+div h4 {
+    font-size: 17px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-family: Futura, 'Fjalla One', sans-serif;
+    line-height: 22px;
+    font-weight: lighter;
+    color: black;
+}
+
+.left-margin {
+    margin-left: 20px;
+}

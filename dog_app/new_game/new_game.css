@@ -1,0 +1,65 @@
+.info {
+    background: #2d89ef;
+    padding-left: 3px;
+    padding-right: 3px;
+    border-radius: 5px;
+    font-size: 15px;
+    color: white;
+    font-weight: 900;
+    text-shadow: 2px 2px #000000;
+}
+
+.writable-content {
+}
+
+.info_text {
+    font-style: italic;
+    max-width: 358px;
+    font-family: 'Open Sans';
+}
+
+div.breed-info {
+    /* position: absolute; */
+    left: 0;
+}
+
+.margin-top {
+    margin-top: 10px;
+}
+
+table.breed-info {
+    margin-top:5px;
+    float: left;
+    margin-bottom:5px;
+    width: 343px;
+    border: 1px solid black;
+}
+
+.breed-info-bold {
+    font-weight: bold;
+}
+
+table.breed-info thead {
+    background: #2d89ef;
+    color: white;
+    border: 1px solid black;
+    font-weight: bold;
+}
+
+table.breed-info td {
+    padding: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.form-title {
+    font-weight: bold;
+}
+
+.breed-select {
+    /* position: relative; */
+}
+
+.breed-select img {
+    height: 150px;
+}

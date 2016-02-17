@@ -1,0 +1,94 @@
+<h3>Tallenna</h3>
+
+<div ng-if="user.save.status=='saving'">
+    Tallennetaan...
+</div>
+<div ng-if="user.save.status=='success'" class="dog-attribute attribute-9">
+    Tallennettu!
+</div>
+
+<div ng-if="user.save.status!=='success' && user.save.status!=='saving' && user.isRegistered==false">
+    <form name="signup_form" novalidate ng-submit="save(true)">
+        <div class="">Sinun pitää rekisteröityä jotta voit tallentaa pelin!</div>
+
+        <div ng-if="user.save.status=='username_taken'" class="form-error">Käyttäjänimi on varattu!</div>
+        <div ng-if="user.save.status=='data_validation_failed'" class="form-error">Tietosi eivät olleet asianmukaiset.
+        </div>
+        <div ng-if="user.save.status=='failed'" class="form-error">Tallennus epäonnistui jostakin syystä. Ota yhteyttä
+            ylläpitoon rajajarvi@gmail.com.
+        </div>
+        <br/>
+        <table>
+            <tr>
+                <td class="form-field">Kennelin nimi</td>
+                <td><input name="kennel" ng-model="user.testKennel" type="text" ng-minlength=2 ng-maxlength=20
+                           ng-pattern="/^[a-zA-Z0-9 'äÄöÖåÅ]*$/" required>
+                    <span class="form-error" ng-show="signup_form.kennel.$error.minlength">Liian lyhyt.</span>
+                    <span class="form-error" ng-show="signup_form.kennel.$error.maxlength">Liian pitkä.</span>
+                    <span class="form-error"
+                          ng-show="signup_form.kennel.$pristine && signup_form.kennel.$error.required">*</span>
+                    <span class="form-error"
+                          ng-show="!signup_form.kennel.$pristine && signup_form.kennel.$error.required">Pakollinen kenttä.</span>
+
+                    <span class="form-error"
+                          ng-show="signup_form.kennel.$error.pattern">Nimi sisältää kelpaamattomia merkkejä.</span>
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="form-field">Käyttäjätunnus</td>
+                <td><input name="username" ng-model="user.username" type="text" ng-minlength=6 ng-maxlength=20
+                           ng-pattern="/^[a-zA-Z0-9]*$/" required>
+                    <span class="form-error" ng-show="signup_form.username.$error.minlength">Liian lyhyt.</span>
+                    <span class="form-error" ng-show="signup_form.username.$error.maxlength">Liian pitkä.</span>
+                    <span class="form-error"
+                          ng-show="signup_form.username.$pristine && signup_form.username.$error.required">*</span>
+                    <span class="form-error"
+                          ng-show="!signup_form.username.$pristine && signup_form.username.$error.required">Pakollinen kenttä.</span>
+                    <span class="form-error"
+                          ng-show="signup_form.username.$error.pattern">Käyttäjätunnus sisältää kelpaamattomia merkkejä.</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="form-field">Salasana</td>
+                <td><input name="password" ng-model="user.password" type="password" ng-minlength=6 ng-maxlength=20
+                           ng-pattern="/^[a-zA-Z0-9]*$/" required>
+                    <span class="form-error" ng-show="signup_form.password.$error.minlength">Liian lyhyt.</span>
+                    <span class="form-error" ng-show="signup_form.password.$error.maxlength">Liian pitkä.</span>
+                    <span class="form-error"
+                          ng-show="signup_form.password.$pristine && signup_form.password.$error.required">*</span>
+                    <span class="form-error"
+                          ng-show="!signup_form.password.$pristine && signup_form.password.$error.required">Pakollinen kenttä.</span>
+                    <span class="form-error"
+                          ng-show="signup_form.password.$error.pattern">Salasana sisältää kelpaamattomia merkkejä.</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="form-field">Salasana uudelleen</td>
+                <td>
+                    <input name="passwordAgain" ng-model="user.passwordAgain" type="password" required>
+                    <span class="form-error" ng-if="signup_form.password.$valid && user.password != user.passwordAgain">Salasanat eivät vastaa toisiaan.</span>
+                </td>
+            </tr>
+        </table>
+        <br/>
+        <button type="submit" ng-if="
+        signup_form.kennel.$valid &&
+        signup_form.username.$valid &&
+        signup_form.password.$valid &&
+        (user.password == user.passwordAgain)" class="rop-button">Rekisteröidy
+        </button>
+        <button type="submit" ng-if="
+        !signup_form.kennel.$valid ||
+        !signup_form.username.$valid ||
+        !signup_form.password.$valid ||
+        !(user.password == user.passwordAgain)" class="rop-button rop-button-disabled">Rekisteröidy
+        </button>
+    </form>
+</div>
+<div ng-if="user.isRegistered==true && user.save.status=='new'">
+    <button ng-click="save(false)">Tallenna</button>
+</div>

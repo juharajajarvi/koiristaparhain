@@ -1,0 +1,156 @@
+@media all and (max-height: 700px) {
+    img.top-logo {
+        display: none;
+    }
+
+    div.dog-profile-image {
+        height: 100px;
+    }
+
+    img.adult {
+        width: 100px;
+    }
+
+}
+
+@media all and (max-width: 700px) {
+
+    img.top-logo {
+        display: none;
+    }
+
+    div div.left-side-panel {
+        width: 100%;
+        height: 88px;
+    }
+
+    div.left-side-panel h2 {
+       font-size: 14px;
+        margin-bottom:0;
+        text-shadow: none;
+    }
+
+    div div.left-side-panel div {
+        font-size:11px !important;
+        padding: 0;
+}
+
+    div.star_rating img {
+        height: 13px;
+    }
+
+    div h3 {
+        font-size: 22px;
+    }
+
+    div.dog-profile-image {
+        height:90px;
+    }
+    div.dog-profile-image .adult {
+        width: 90px;
+    }
+    div.dog-profile-image .semiadult {
+        width: 70px;
+        margin-top: 10px;
+    }
+    div.dog-profile-image .puppy {
+        width: 50px;
+        margin-top: 10px;
+    }
+
+    .dog-badge {
+        width: 20px;
+    }
+
+    div.left-side-panel .own-row, div.left-side-panel h2, div.left-side-panel .star_container, div.left-side-panel .current-date, div.left-side-panel .bank-account {
+        float: left;
+        display: inline;
+
+        padding-left: 7px;
+        padding-right: 7px;
+    }
+
+    div.left-side-panel .dark-blue-background {
+    
+        overflow: hidden;
+        margin-left: 1px;
+        margin-right: 1px;
+        font-size: 11px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        height: 31px;
+        word-break: normal;
+        line-height: 8px;
+}
+
+    div.left-side-panel button {
+        /* float: left; */
+    }
+
+    div.ui-block {
+        margin-bottom: 2px;
+    }
+
+    div.ui-block-1 {
+        float: none;
+        display: flex;
+}
+
+    div.ui-block-2 {
+        height: 24px;
+        float: none;
+        display: flex;
+}
+
+    div.ui-block-3 {
+        height: 32px;
+        display: flex;
+}
+
+    div.left-side-panel .light-purple-background {
+        margin-left: 1px;
+        margin-right: 1px;
+    
+        font-size: 11px;
+        height: 23px;
+}
+
+    div.main-view {
+        left: 0;
+        top: 89px;
+    }
+
+    .tab-dead, .tab-bank_account, .tab-feedback, .tab-guide, .hide-this {
+        display: none;
+    }
+
+    div.ngdialog-buttons {
+       top: 1px;
+        right: 1px;
+    }
+
+    .ngdialog-content h3 {
+        margin-top:30px;
+    }
+
+    div h3 {
+        margin-top:4px;
+    }
+
+    .dog-pair {
+        width: auto;
+    }
+
+    .heart {
+        display: none;
+    }
+
+    .new-game-kennel-name {
+        margin-top: 2px;
+    }
+
+    .hint-image {
+        width: 100%;
+    }
+
+}

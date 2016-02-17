@@ -1,0 +1,70 @@
+.dark-blue-background {
+    background: #2b5797;
+}
+
+.dark-blue-background:active {
+  background: #ff0097;
+}
+
+.dark-blue-background.true {
+    background: #9f00a7;
+}
+
+.dark-blue-color {
+    background: #2b5797;
+}
+
+.blue-background {
+    background: #2d89ef;
+}
+
+div .blue-color {
+    color: #2d89ef;
+    font-weight: bold;
+}
+
+div .light-purple-background {
+    background: #ff0097;
+    outline: none;
+}
+
+div .light-purple-background:hover {
+    color: black;
+}
+
+div .light-purple-background:active {
+    background: #7e3878;
+}
+
+.white-color {
+    color: white;
+}
+
+.green-background {
+    background: #00a300;
+}
+
+.rop-button {
+    background: #2d89ef;
+    padding: 6px;
+    z-index: 100;
+}
+
+button.rop-button-disabled, button.rop-button-disabled:hover {
+    background: darkgray;
+    z-index: 100;
+}
+
+
+.rop-button:hover{
+    color: black;
+}
+
+.rop-button:active {
+    background: #2b5797;
+}
+
+.debt {
+    color: #b91d47;
+    font-weight: bold;
+}

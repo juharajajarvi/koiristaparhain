@@ -1,0 +1,186 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Koirista parhain</title>
+    <meta name="description" content="Koirista parhain">
+    <meta name="author" content="Juha Rajajärvi">
+
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Expires" CONTENT="-1">
+
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="dog_app/css/style.css?version=1986">
+    <link rel="stylesheet" href="dog_app/css/lumia_mediaqueries.css?version=1986">
+    <link rel="stylesheet" href="dog_app/css/bootstrap_override.css?version=1986">
+    <link rel="stylesheet" href="dog_app/css/panel.css?version=1986">
+    <link rel="stylesheet" href="dog_app/css/metro_colors.css?version=1986">
+
+    <link rel="stylesheet" href="dog_app/menu/bank_account/bank_account.css?version=1986">
+    <link rel="stylesheet" href="dog_app/menu/achievements/achievements.css?version=1986">
+    <link rel="stylesheet" href="dog_app/new_game/new_game.css?version=1986">
+
+    <link rel="stylesheet" href="dog_app/dog/dog_profile/dog_profile.css?version=1986">
+    <link rel="stylesheet" href="dog_app/menu/happenings/happening.css?version=1986">
+
+    <link rel="stylesheet" href="lib/ngDialog-master/css/ngDialog.min.css?version=1986">
+    <link rel="stylesheet" href="lib/ngDialog-master/css/ngDialog-theme-default.min.css?version=1986">
+    <link rel="stylesheet" href="lib/ngDialog-master/css/ngDialog-theme-achievement.css?version=1986">
+    <link rel="stylesheet" href="lib/ngDialog-master/css/ngDialog-theme-hint.css?version=1986">
+
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css?version=1986">
+
+    <script src="lib/angular.js/angular.min.js"></script>
+    <script src="lib/angular.js/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="lib/googlecharts.jsapi"></script>
+    <script type="text/javascript" src="lib/angular-google-chart-gh-pages/ng-google-chart.js"></script>
+    <script src="lib/jquery-2.1.4.min.js"></script>
+
+    <script src="dog_app/menu/achievements/Achievements.js?version=1986"></script>
+    <script src="dog_app/menu/achievements/Achievement.js?version=1986"></script>
+
+    <link rel="stylesheet" href="dog_app/menu/vet/vet.css?version=1986">
+    <script src="dog_app/dog/HealthIssue.js?version=1986"></script>
+    <script src="dog_app/menu/vet/Vet.js?version=1986"></script>
+    <script src="dog_app/dog/GenePool.js?version=1986"></script>
+    <script src="dog_app/dog/Hips.js?version=1986"></script>
+    <script src="dog_app/dog/Trait.js?version=1986"></script>
+    <script src="dog_app/dog/Gene.js?version=1986"></script>
+    <script src="dog_app/dog/Dog.js?version=1986"></script>
+    <script src="dog_app/dog/Breed.js?version=1986"></script>
+    <script src="dog_app/dog/Charts.js?version=1986"></script>
+    <script src="dog_app/dog/FixedAttributes.js?version=1986"></script>
+    <script src="dog_app/dog/RawAttributes.js?version=1986"></script>
+    <script src="dog_app/dog/NumberAttributes.js?version=1986"></script>
+    <script src="dog_app/dog/PrintAttributes.js?version=1986"></script>
+    <script src="dog_app/dog/Ratings.js?version=1986"></script>
+    <script src="dog_app/dog/DogFactory.js?version=1986"></script>
+    <script src="dog_app/dog/DogData.js?version=1986"></script>
+    <script src="dog_app/dog/ShetlandSheepdogData.js?version=1986"></script>
+    <script src="dog_app/dog/ChihuahuaData.js?version=1986"></script>
+    <script src="dog_app/dog/Placement.js?version=1986"></script>
+    <script src="dog_app/dog/DogSerializer.js?version=1986"></script>
+
+    <script src="dog_app/js/LaunchSettings.js?version=1986"></script>
+    <script src="dog_app/js/DifficultySettings.js?version=1986"></script>
+    <script src="dog_app/js/RandomHelper.js?version=1986"></script>
+    <script src="dog_app/js/NameHelper.js?version=1986"></script>
+    <script src="dog_app/js/Constants.js?version=1986"></script>
+    <script src="dog_app/js/Library.js?version=1986"></script>
+    <script src="dog_app/js/User.js?version=1986"></script>
+
+    <script src="dog_app/menu/bank_account/Sponsor.js?version=1986"></script>
+    <script src="dog_app/menu/bank_account/BankAccount.js?version=1986"></script>
+
+    <script src="dog_app/menu/happenings/Happening.js?version=1986"></script>
+    <script src="dog_app/menu/happenings/Training.js?version=1986"></script>
+    <script src="dog_app/menu/happenings/HappeningHelper.js?version=1986"></script>
+    <script src="dog_app/menu/happenings/HappeningFactory.js?version=1986"></script>
+
+    <script src="dog_app/menu/happenings_online/OnlineHappening.js?version=1986"></script>
+    <script src="dog_app/menu/happenings_online/OnlineHappeningFactory.js?version=1986"></script>
+
+    <script src="dog_app/DogApp_v3.js?version=1986"></script>
+
+    <script src="lib/ngDialog-master/js/ngDialog.js"></script>
+    <script src="lib/ui-bootstrap-tpls-0.13.0.min.js"></script>
+
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+
+    <script>
+
+        if (LaunchSettings.SEND_GOOGLE_ANALYTICS) {
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-58691911-1', 'auto');
+            ga('send', 'pageview');
+        }
+
+    </script>
+</head>
+
+<body>
+
+<div ng-app="dogApp" ng-controller="SimpleController">
+
+    <div ng-if="!isNgDialogOpen()">
+        <div class="left-side-panel blue-background" ng-if="user.kennel.length>0">
+
+            <div class="own-row"><img class="top-logo link" src="front_page/logo.png"
+                                      onclick="window.open('index.html');"></div>
+
+            <div class="ui-block ui-block-1">
+                <h2>{{ user.kennel }} kennel</h2>
+
+                <div class="star_container">
+                    <div class="star_rating" title-placement="bottom" title-popup-delay="1500"
+                         title="Kennelisi maine on yksi tärkeimmistä asioista pelissä. Se vaikuttaa mm. siihen, kuinka tasokkaiden koirien kanssa voit parittaa omia koiriasi."
+                         ng-bind-html="getStarImage()"></div>
+                    <br>
+                </div>
+                <div class="current-date text-center" title-placement="bottom" title-popup-delay="1500"
+                     title="Päivämäärä tänään.">{{ getCurrentPrintDate() }}
+                </div>
+                <div class="bank-account text-center" ng-click="setActive('bank_account')">Tili: <span
+                        class="{{bankAccount.getClass()}}">{{ bankAccount.printAmount() }}</span></div>
+            </div>
+
+            <div class="ui-block ui-block-2">
+                <!--<button class="rop-button light-purple-background white-color" ng-click="age(1);">Vanhenna päivä</button>-->
+                <button class="panel-button light-purple-background white-color" ng-click="age(7);">Vanhenna
+                    viikko
+                </button>
+                <button class="panel-button light-purple-background white-color" ng-click="age(31);">Vanhenna
+                    kuukausi
+                </button>
+                <button class="panel-button light-purple-background white-color hide-this" ng-click="age(31*3);">
+                    Vanhenna 3
+                    kk
+                </button>
+            </div>
+
+
+            <div class="ui-block ui-block-3">
+
+                <button ng-repeat="tab in tabs"
+                        class="panel-button dark-blue-background white-color {{tab.active}} tab-{{tab.name}}"
+                        ng-click="setActive(tab.name)" ng-bind-html="tab.buttonTitle">
+                    <div ng-if="tab.name=='vet' && vet.unseenHealthIssuesCount() >0" class="unread-news">
+                        {{vet.unseenHealthIssuesCount()}}
+                    </div>
+                </button>
+
+                <button class="panel-button dark-blue-background white-color tab-feedback"
+                        onclick="window.open('index.html?feedback=true');">
+                    Palaute
+                </button>
+                <button class="panel-button dark-blue-background white-color tab-guide"
+                        onclick="window.open('index.html?guide=true');">
+                    Ohje
+                </button>
+            </div>
+
+        </div>
+        <div class="main-view">
+            <div ng-repeat="tab in tabs" ng-if="tab.active == true" ng-include="tab.include">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

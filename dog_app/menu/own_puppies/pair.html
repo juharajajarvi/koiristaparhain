@@ -1,0 +1,20 @@
+<h3 class="own-row">Haluatko tehdä astutuksen?</h3>
+
+<div class="ngdialog-buttons">
+    <button type="button" class="ngdialog-button ngdialog-button-secondary" ng-click="closeThisDialog()">Peru
+    </button>
+    <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="confirm()">Tee astutus
+    </button>
+</div>
+
+<div class="dog-pair">
+    <div ng-controller="MainCtrl" ng-init="::dog=dog1" class="dog">
+        <div ng-include="'dog_app/dog/dog_profile/dog_profile_abstract.html'"></div>
+    </div>
+
+    <div><img src="dog_app/img/heart.png" class="heart"></div>
+
+    <div ng-controller="MainCtrl" ng-init="::dog=dog2" class="dog">
+        <div ng-include="'dog_app/dog/dog_profile/dog_profile_abstract.html'"></div>
+    </div>
+</div>

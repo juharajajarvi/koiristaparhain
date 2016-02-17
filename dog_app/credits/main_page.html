@@ -1,0 +1,19 @@
+<h3>Palaute</h3>
+
+Koirista parhain -pelin on tehnyt Juha Rajajärvi (<span class="email">rajajarvi@gmail.com</span>).
+Haluaisin palautetta pelistä, niin hyvää kuin huonoa!
+
+<br>
+<br>
+<form ng-controller="FeedbackController" novalidate>
+<label>Sähköpostiosoite (vapaaehtoinen)</label><br>
+<input type="text" ng-model="feedback.email" placeholder="Sähköpostiosoite"></input>
+
+<br>
+<br>
+<label>Palaute</label><br>
+<textarea type="text" ng-model="feedback.feedback" placeholder="Palaute" cols="20" rows="6"></textarea>
+<br>
+    <br>
+<button class="rop-button ngdialog-button" ng-click="sendFeedback()">Lähetä</button>
+</form>

@@ -1,0 +1,24 @@
+<div class="own-row">
+    <h3>
+        Pennut varttuu, virheist oppii ja kokemus karttuu!
+    </h3>
+</div>
+<h4 class="own-row">Pennuilla on luovutusikä.</h4>
+
+<div class="ngdialog-buttons">
+    <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="confirm()">OK</button>
+</div>
+
+<div class="own-row">
+    <div ng-repeat="dog in ::puppies" class="dog">
+
+        <div class="btn-group" ng-controller="ButtonsCtrl">
+            <label ng-if="::!dog.isDead()" class="btn btn-primary" ng-model="dog.selectedAction" btn-radio="'sell'">Myy</label>
+            <label ng-if="::!dog.isDead()" class="btn btn-primary" ng-model="dog.selectedAction" btn-radio="'keep'">Pidä</label>
+            <label ng-if="::dog.isDead()" class="btn btn-primary" ng-model="dog.selectedAction" btn-radio="'bury'">Hautaa</label>
+        </div>
+
+        <div ng-include="'dog_app/dog/dog_profile/dog_profile_abstract.html'"></div>
+
+    </div>
+</div>

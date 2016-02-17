@@ -1,0 +1,54 @@
+<!--<div class="ngdialog-buttons">
+    <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="confirm()">OK</button>
+</div>-->
+
+<div class="own-row">
+    <h3>Sponsori</h3>
+
+    <div ng-if="bankAccount.hasSponsor()">
+        <h4>Sopimuksesi on umpeutunut. On aika solmia uusi sopimus.</h4>
+    </div>
+    <div ng-if="!bankAccount.hasSponsor()">
+        <h4>Huikea menestyksesi on kantautunut paikallisten yritysten korviin.</h4>
+        <h4>Sinulle tarjotaan sponsorointisopimusta!</h4>
+    </div>
+
+    <div ng-repeat="sponsor in bankAccount.allSponsors" class="sponsor">
+        <div><img class="sponsor-logo" ng-src="dog_app/menu/bank_account/{{sponsor.img}}"></div>
+        <table class="sponsor-info">
+            <tbody>
+            <tr>
+                <td class="sponsor-column-1">
+                    Rahaa per viikko
+                </td>
+                <td class="sponsor-column-2">
+                    {{sponsor.amountPerWeek}} €
+                </td>
+            </tr>
+            <tr>
+                <td class="sponsor-column-1">
+                    Sopimuksen kesto
+                </td>
+                <td class="sponsor-column-2">
+                    {{sponsor.contractLength}} vuotta
+                </td>
+            </tr>
+            <tr>
+                <td class="sponsor-column-1">
+                    Sopimuksen purkamisehto
+                </td>
+                <td class="sponsor-column-2">
+                    {{sponsor.cancellationText}}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div class="signup-button-container">
+            <button type="button" class="signup-button" ng-click="confirm(sponsor)">Allekirjoita sopimus</button>
+        </div>
+
+    </div>
+
+
+</div>

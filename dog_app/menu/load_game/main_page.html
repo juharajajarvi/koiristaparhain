@@ -1,0 +1,19 @@
+<h3>Lataa</h3>
+
+<div ng-if="user.isRegistered">
+
+    <div ng-if="user.load.status=='loading'">
+        Ladataan...
+    </div>
+    <div ng-if="user.load.status=='success'" class="dog-attribute attribute-9">
+        Ladattu!
+    </div>
+    <div ng-if="user.load.status=='failed'" class="dog-attribute attribute-1">
+        Odottamaton ongelma. Ota yhteyttä ylläpitoon osoitteessa rajajarvi@gmail.com.
+    </div>
+
+    <button ng-if="user.load.status=='new'" ng-click="load()">Lataa</button>
+</div>
+<div ng-if="!user.isRegistered">
+    Sinun pitää olla rekisteröitynyt, jotta voit ladata aiemmin tallennetun pelin.
+</div>

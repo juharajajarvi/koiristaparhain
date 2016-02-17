@@ -1,0 +1,88 @@
+<table class="dog-profile-table" style="white-space:normal;width:175px;">
+    <tr>
+        <td>Ikä</td>
+        <td class="small-left-margin">{{ dog.attributes.print.getAge() }}</td>
+    </tr>
+    <tr>
+        <td>Säkä</td>
+        <td class="small-left-margin">{{ dog.attributes.print.getHeight() }} <span
+                class="dog-attribute attribute-{{ dog.attributes.ratings.getHeightGrade() }}">{{dog.attributes.ratings.getHeightGrade()}}</span>
+        </td>
+    </tr>
+    <tr>
+        <td>Paino</td>
+        <td class="small-left-margin">{{ dog.attributes.print.getMass() }}
+            <!--({{dog.attributes.print.getOptimalMass()}}) <span class="dog-attribute attribute-{{ dog.attributes.ratings.getMassGrade() }}"> {{dog.attributes.ratings.getMassGrade()}}</span>-->
+        </td>
+    </tr>
+    <tr>
+        <td>Sukupuoli</td>
+        <td class="small-left-margin">{{::dog.attributes.fixed.sex}}</td>
+    </tr>
+    <tr>
+        <td>Väri</td>
+        <td class="small-left-margin">{{::dog.attributes.fixed.color }}</td>
+    </tr>
+    <tr style="height:10px">
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Yleis- arvosana</td>
+        <td class="center"><span class="dog-attribute"><div class="star_rating"
+                                                            ng-bind-html="dog.attributes.ratings.getRatingStar()">
+        </div></span>
+        </td>
+    </tr>
+    <!--<tr>
+        <td>Jalostus-arvosana</td>
+        <td class="center"><span class="dog-attribute"><div class="star_rating"
+                                                            ng-bind-html="dog.attributes.ratings.getBreedRatingStar()">
+        </div></span>
+        </td>
+    </tr>-->
+    <tr style="height:10px;">
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+<table class="dog-profile-table" style="white-space:normal;width:150px;">
+    <tr>
+        <td>Avoimuus</td>
+        <td class="center"><span class="dog-attribute attribute-{{ dog.attributes.number.getOpenness() }}">{{dog.attributes.number.getOpenness()}}</span>
+        </td>
+    </tr>
+    <tr>
+        <td>Rauhallisuus</td>
+        <td class="center"><span class="dog-attribute attribute-{{ dog.attributes.number.getCalmness() }}">{{dog.attributes.number.getCalmness()}}</span>
+        </td>
+    </tr>
+    <tr>
+        <td>Stressinsieto</td>
+        <td class="center"><span class="dog-attribute attribute-{{ dog.attributes.number.getComposure() }}">{{dog.attributes.number.getComposure()}}</span>
+        </td>
+    </tr>
+    <tr>
+        <td>Terveys</td>
+        <td class="center">
+            <span class="dog-attribute attribute-{{ dog.attributes.number.getHealth() }}">{{dog.attributes.number.getHealth()}}</span>
+            <!--<span ng-if="dog.attributes.fixed.isOwn" class="dog-attribute food-effect">
+                (<span class="attribute-{{ dog.attributes.number.getFoodHealthClass() }}">{{dog.attributes.number.getFoodHealthEffect()}}</span>)
+            </span>-->
+        </td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>Koulutus</td>
+        <td class="center"><span class="dog-attribute attribute-{{ dog.attributes.number.getTraining() }}">{{dog.attributes.number.getTraining()}}</span>
+        </td>
+    </tr>
+    <tr>
+        <td>Kokemus</td>
+        <td class="center"><span class="dog-attribute attribute-{{ dog.attributes.number.getExperience() }}">{{dog.attributes.number.getExperience()}}</span>
+        </td>
+    </tr>
+</table>

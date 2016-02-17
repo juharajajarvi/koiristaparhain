@@ -1,0 +1,10 @@
+# http://members.shaw.ca/crystaljems/weight.htm
+0	120
+1	198
+2	283
+3	368
+4	425
+5	482
+6	567
+7	624
+8	680

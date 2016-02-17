@@ -1,0 +1,140 @@
+.happening-container {
+    float: left;
+}
+
+.happening-calendar {
+    width: 262px;
+    border: 1px solid black;
+    margin-right: 20px;
+    background: #ecf0f1;
+    padding: 5px;
+    margin: 6px;
+    position: relative;
+	height: 150px;
+}
+
+.big-tournament-signup {
+    font-weight: bold;
+    background: #ffc40d;
+    display: inline-block;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.match-show {
+    background: #9b59b6;
+}
+
+.official-show {
+    background: #3498db;
+}
+
+.big-show {
+    background: #f1c40f;
+}
+
+.training {
+    background: #1abc9c;
+}
+
+.happening h3 {
+    font-size: 20px;
+}
+
+.signup-button {
+    background: #2d89ef;
+    border: 1px solid black;
+    padding: 4px;
+    border-radius: 2px;
+    right: 2px;
+    color: white;
+    position: absolute;
+    bottom: 2px;
+}
+
+.signup-button.signedup {
+    background: #ffc40d;
+}
+
+.signup-button:hover {
+    color: black;
+}
+
+.signup-button:active {
+    background: #2b5797;
+}
+
+.trophy-container {
+    height: 65px;
+}
+
+.trophy-container img {
+    height: 65px;
+    float: left;
+}
+
+.palkintopalli-container {
+    position: relative; 
+    height: 304px; width:350px; 
+    margin-bottom: 23px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.happening-results {
+    margin-left: auto;
+    margin-right: auto;
+    width: 326px;
+    overflow: visible;
+}
+
+.happening-rank {
+    padding: 4px;
+    border-radius: 90px;
+    background: #ecf0f1;
+    display: inline-block;
+    width: 55px;
+    height: 55px;
+    text-align: center;
+    padding-top: 12px;
+    margin-left: 15px;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.rank-1 {
+    background:#D4AF37;
+}
+
+.rank-2 {
+    background: #A9A9A9;
+}
+
+.rank-3 {
+    background:#CD7F32;
+}
+
+.happening {
+    width: 200px;
+    text-align: left;
+    background: #bdc3c7;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+}
+
+.happening-results-table td:first-of-type {
+    padding-right: 5px;
+}
+
+.happening-results-table td:nth-child(2) {
+    padding-right: 15px;
+}
+
+.no-top-margin {
+    margin-top:0;
+}

@@ -1,0 +1,49 @@
+
+
+*******************************************************************************
+Sat Mar 28 23:52:05 2015
+
+
+FIT:    data read from 'saka_uros.txt' using 1:2
+        format = x:z
+        #datapoints = 2098
+        residuals are weighted equally (unit weight)
+
+function used for fitting: h(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 750843            delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-005
+ lambda	  : 0.579325
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+c               = 1
+
+After 19 iterations the fit converged.
+final sum of squares of residuals : 13.6036
+rel. change during last iteration : -1.58084e-006
+
+degrees of freedom    (FIT_NDF)                        : 2095
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0805813
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00649334
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -11.8906         +/- 0.4109       (3.456%)
+b               = 1.07776          +/- 0.03582      (3.323%)
+c               = 20.9007          +/- 0.02886      (0.1381%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.975  1.000 
+c              -0.998  0.969  1.000 

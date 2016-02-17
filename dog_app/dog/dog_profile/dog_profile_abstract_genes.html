@@ -1,0 +1,116 @@
+<div ng-if="dog.attributes.fixed.isOwn || dog.genetestPaid">
+    <h4 class="dog-profile-topic">Sairaudet</h4>
+    <table>
+
+        <tr ng-if="::dog.attributes.fixed.isShetlandsheepdog()" ng-init="gene = dog.genes.cea" ng-controller="MainCtrl">
+            <td class="gene-name" title="Collie Eye Anomaly -sairaus.">CEA</td>
+            <td class="gene-status">
+                <div>{{::gene.getStatusText()}}</div>
+                <div ng-if="::gene.getHealthEffect() < 0" class="dog-attribute attribute-1"
+                     title="Heikentää koiran terveyttä.">({{::gene.getHealthEffect()}})
+                </div>
+            </td>
+            <td>
+                <div ng-repeat="allele in ::gene.alleles track by $index" class="allele">
+                    <div ng-if="::allele == true" class="allele-stripe allele-true"
+                         title="Huono, resessiivinen alleeli."></div>
+                    <div ng-if="::allele == false" class="allele-stripe allele-false"
+                         title="Hyvä, dominoiva alleeli."></div>
+                </div>
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr ng-init="gene = dog.genes.hips" ng-controller="MainCtrl">
+            <td class="gene-name" title="Koiran lonkkien kunto.">Lonkat</td>
+            <td class="gene-status" title="A-lonkat on parhaat. C- ja E-lonkilla koiralle saattaa tulla kipuja.">
+                <div>{{::gene.getStatusText()}}</div>
+                <div ng-if="::gene.getHealthEffect() < 0" class="dog-attribute attribute-1"
+                     title="Heikentää koiran terveyttä.">({{::gene.getHealthEffect()}})
+                </div>
+            </td>
+            <td>
+                <div ng-repeat="allele in ::gene.alleles track by $index" class="allele">
+                    <div ng-if="::allele == true" class="allele-stripe allele-true" title="Huono alleeli."></div>
+                    <div ng-if="::allele == false" class="allele-stripe allele-false" title="Hyvä alleeli."></div>
+                </div>
+            </td>
+        </tr>
+        <tr ng-init="gene = dog.genes.genePool" ng-controller="MainCtrl">
+            <td class="gene-name" title="Näitä geenejä täytyy jokaista olla vähintään yksi, tai muutoin koira on altis erilaisille sairauksille.">Muut</td>
+            <td class="gene-status">
+                <div ng-if="::gene.hasPoorGenePool()" class="dog-attribute attribute-1" title="Koiralta puuttuu jotakin geeniä ja se on altis joillekin sairauksille.">
+                    Altis
+                </div>
+                <div ng-if="::!gene.hasPoorGenePool()" class="dog-attribute attribute-9" title="Koiralla on kaikkia geenejä vähintään yksi.">
+                    Hyvä
+                </div>
+            </td>
+            <td>
+                <table>
+                    <tr>
+                        <td>
+                            <div class="allele gene-pool-allele">
+                                <div class="allele-stripe allele-alpha">&alpha;</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="allele gene-pool-allele">
+                                <div class="allele-stripe allele-beta">&beta;</div>
+                            </div>
+
+                        </td>
+                        <td>
+                            <div class="allele gene-pool-allele">
+                                <div class="allele-stripe allele-gamma">&gamma;</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="allele gene-pool-allele">
+                                <div class="allele-stripe allele-delta">&delta;</div>
+                            </div>
+
+                        </td>
+                        <td>
+                            <div class="allele gene-pool-allele">
+                                <div class="allele-stripe allele-epsilon">&epsilon;</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="gene-pool gene-pool-lacking-{{::gene.isLackingAlpha()}}">{{::gene.numberAlpha()}}</td>
+                        <td class="gene-pool gene-pool-lacking-{{::gene.isLackingBeta()}}">{{::gene.numberBeta()}}</td>
+                        <td class="gene-pool gene-pool-lacking-{{::gene.isLackingGamma()}}">{{::gene.numberGamma()}}</td>
+                        <td class="gene-pool gene-pool-lacking-{{::gene.isLackingDelta()}}">{{::gene.numberDelta()}}</td>
+                        <td class="gene-pool gene-pool-lacking-{{::gene.isLackingEpsilon()}}">{{::gene.numberEpsilon()}}</td>
+                    </tr>
+
+                </table>
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <h4 class="dog-profile-topic">Erityisominaisuudet</h4>
+    <table>
+        <tr ng-init="gene = dog.genes.shinyFur" ng-controller="MainCtrl">
+            <td class="gene-name" title="Säihkyvyys on erityinen ominaisuus, joka parantaa koiran yleisarvosanaa.">Säihkyvä</td>
+            <td class="gene-status">
+                <div>{{::gene.getStatusText()}}</div>
+                <div ng-if="::gene.getRatingEffect() > 0" class="dog-attribute attribute-7"
+                     title="Parantaa koiran arvosanaa yhdellä tähdellä.">(+1)
+                </div>
+            </td>
+            <td ng-repeat="allele in ::gene.alleles track by $index">
+                <div class="allele">
+                    <div ng-if="::allele == true" class="allele-stripe allele-trait-shiny"
+                         title="Hyvä, resessiivinen alleeli."></div>
+                    <div ng-if="::allele == false" class="allele-stripe allele-trait-false"
+                         title="Huono, dominoiva alleeli."></div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+<div ng-if="!dog.attributes.fixed.isOwn && !dog.genetestPaid">Geenitestiä ei ole tehty.</div>

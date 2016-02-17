@@ -1,0 +1,15 @@
+<div class="own-row">
+    <h3>
+        {{removeDog.getRemoveActionText()}}
+    </h3>
+</div>
+
+<div class="ngdialog-buttons">
+    <button type="button" class="ngdialog-button ngdialog-button-secondary" ng-click="closeThisDialog()">Peruuta
+    </button>
+    <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="confirm()">OK</button>
+</div>
+
+<div class="own-row">
+    <div ng-init="dog=removeDog" class="dog" ng-include="'dog_app/dog/dog_profile/dog_profile_abstract.html'"></div>
+</div>

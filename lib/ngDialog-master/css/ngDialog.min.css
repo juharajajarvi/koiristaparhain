@@ -1,0 +1,9 @@
+/*! ng-dialog - v0.3.7 (https://github.com/likeastore/ngDialog) */
+
+/*
+@-webkit-keyframes ngdialog-fadeout{0%{opacity:1}100%{opacity:0}}@keyframes ngdialog-fadeout{0%{opacity:1}100%{opacity:0}}@-webkit-keyframes ngdialog-fadein{0%{opacity:0}100%{opacity:1}}@keyframes ngdialog-fadein{0%{opacity:0}100%{opacity:1}}
+*/
+.ngdialog,.ngdialog *,.ngdialog :after,.ngdialog :before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.ngdialog{-webkit-overflow-scrolling:touch;/* width: 100%; *//* height: 100%; */float: none;}.ngdialog.ngdialog-closing .ngdialog-overlay{-webkit-animation:ngdialog-fadeout .5s;animation:ngdialog-fadeout .5s}.ngdialog-content{background:#fff;-webkit-animation:ngdialog-fadein .0s;animation:ngdialog-fadein .0s}.ngdialog.ngdialog-closing .ngdialog-content{-webkit-animation:ngdialog-fadeout .5s;animation:ngdialog-fadeout .5s}.ngdialog-close:before{font-family:Helvetica,Arial,sans-serif;content:'\00D7';cursor:pointer}body.ngdialog-open{
+    height: 100%;
+    width: 100%;
+}
